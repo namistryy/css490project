@@ -11,7 +11,7 @@ export default function SourcesPage() {
   return (
     <main className="paper sources-page">
       <p className="sources-note">
-        This webpage is adapted concept of what was originally a research paper. It follows APA
+        This webpage is an adapted concept of what was originally a research paper. It follows APA
         Format guidelines as closely as possible.
       </p>
 
