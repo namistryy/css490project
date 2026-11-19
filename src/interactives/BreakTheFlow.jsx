@@ -25,6 +25,15 @@ export default function BreakTheFlow() {
   const [on, setOn] = useState({ goals: true, feedback: true, balance: true, concentration: true, control: true })
   const [hud, setHud] = useState({ hits: 0, misses: 0, progress: 0, completed: 0 })
   const [running, setRunning] = useState(false)
+  const [restartKey, setRestartKey] = useState(0)
+
+  // Clear the score and difficulty, then start a fresh game.
+  const restart = () => {
+    game.current = null
+    setHud({ hits: 0, misses: 0, progress: 0, completed: 0 })
+    setRestartKey((k) => k + 1)
+    setRunning(true)
+  }
 
   const canvasRef = useRef(null)
   const wrapRef = useRef(null)
@@ -237,7 +246,7 @@ export default function BreakTheFlow() {
       ro.disconnect()
       io.disconnect()
     }
-  }, [running])
+  }, [running, restartKey])
 
   const toggle = (key) => setOn((prev) => ({ ...prev, [key]: !prev[key] }))
   const count = Object.values(on).filter(Boolean).length
@@ -271,6 +280,13 @@ export default function BreakTheFlow() {
               </div>
             )}
           </div>
+          {running && (
+            <div className="btf-actions">
+              <button type="button" onClick={restart}>
+                Restart game
+              </button>
+            </div>
+          )}
         </div>
 
         <fieldset className="btf-toggles">
