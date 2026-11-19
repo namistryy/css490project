@@ -1,6 +1,7 @@
 import Section from '../components/Section.jsx'
 import TypedTitle from '../components/TypedTitle.jsx'
 import Introduction from '../sections/Introduction.jsx'
+import FlowTheory from '../sections/FlowTheory.jsx'
 
 // Sections in reading order. Add a Content component to fill a section.
 const SECTIONS = [
@@ -9,6 +10,7 @@ const SECTIONS = [
     id: 'flow-theory',
     title: 'Flow Theory',
     subsections: ['The Flow Channel', 'The Conditions For Flow'],
+    Content: FlowTheory,
   },
 ]
 
