@@ -139,6 +139,17 @@ html, body {
   text-wrap: balance;
 }
 
+/* Larger subtitle that groups the sections after it (same style family as the title) */
+.part-title {
+  max-width: 40ch;
+  margin: 0 0 96px;
+  font-family: var(--font-head);
+  font-weight: 500;
+  font-size: clamp(24px, 3.2vw, 38px);
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
 /* ---------- Sources page ---------- */
 .sources-note {
   max-width: 60ch;
